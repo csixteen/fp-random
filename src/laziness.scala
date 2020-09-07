@@ -10,10 +10,10 @@ object Laziness {
    * Generates an infinitive list of prime numbers using the
    * Sieve of Eratosthenes.
    */
-  def primes: LazyList[BigInt] = sieve(LazyList.from(2).map(BigInt(_)))
+  val primes: LazyList[BigInt] = sieve(LazyList.from(2).map(BigInt(_)))
 
   /** Generates an infinite Fibonacci sequence */
-  def fibs: LazyList[BigInt] =
+  val fibs: LazyList[BigInt] =
     BigInt(0) #:: BigInt(0) #:: fibs.lazyZip(fibs.tail).map(_ + _)
 }
 
