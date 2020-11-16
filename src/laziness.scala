@@ -14,7 +14,7 @@ object Laziness {
 
   /** Generates an infinite Fibonacci sequence */
   val fibs: LazyList[BigInt] =
-    BigInt(0) #:: BigInt(0) #:: fibs.lazyZip(fibs.tail).map(_ + _)
+    BigInt(0) #:: BigInt(1) #:: fibs.lazyZip(fibs.tail).map(_ + _)
 }
 
 
